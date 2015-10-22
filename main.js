@@ -1,18 +1,25 @@
 import React from "react";
+// import About from "./containers/about.jsx";
+// import Index from "./containers/index.jsx";
+// import appReducers from "./reducers/index.js";
+// import { createStore} from 'redux';
+// import { Provider } from 'react-redux';
+import { render } from 'react-dom';
+import { Router, Route,IndexRoute } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 import App from "./containers/app.jsx";
-import About from "./containers/about.jsx";
 import Index from "./containers/index.jsx";
-import { render } from 'react-dom'
-import { Router, Route, Link, History,IndexRoute } from 'react-router'
-import { createHistory} from 'history'
+import About from "./containers/about.jsx";
 
-const history = createHistory();
+
+
+let history = createBrowserHistory();
 
 render((
   <Router history={history}>
     <Route path="/" component={App}>
-      <IndexRoute component={Index} />
-      <Route path="about" component={About} />
+      <IndexRoute component={Index}/>
+      <Route path="about" component={About}></Route>
     </Route>
   </Router>
-), document.body)
+),document.body)
